@@ -1,0 +1,138 @@
+@import "_reset.scss";
+$container: 960px;
+$pad: 980px;
+$mob: 720px;
+$smob: 374px;
+
+%clear {
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}
+
+a,h1,h2,h3,h4,h5,h6,span,p,a,input,label,button,div,span {
+  font-family: sans-serif, 'Arial', 'Microsoft JhengHei';
+  font-size: 14px;
+  color: #000;
+}
+
+html,
+body {
+  width: 100%; 
+  height: 100%;
+}
+
+.mob_menu {
+  display: none;
+  position: fixed;
+  top: 28px;
+  right: 20px;
+  z-index: 6;
+  transition: right .5s;
+  cursor: pointer;
+  &:before,
+  &:after {
+    content: "";
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #333;
+    transition: all .5s;
+  }
+  span {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #333;
+    margin: 3px 0;
+  }
+  @media screen and (max-width: $pad) {
+    display: block;
+  }
+}
+
+.header {
+  max-width: $container;
+  width: 100%;
+  margin: 0px auto;
+  padding: 38px 20px 0px 20px;
+  box-sizing: border-box;
+  @media screen and (max-width: $pad) {
+    padding: 27px 20px 0px 20px;
+  }
+  .content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+
+nav {
+  @media screen and (max-width: $pad) {
+    position: fixed;
+    top: 0px;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: #cecece;
+    z-index: 5;
+    transition: left .5s;
+  }
+}
+.menu {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  @media screen and (max-width: $pad) {
+      display: block;
+      padding-top: 40px;
+      text-align: center;
+  }
+  li {
+    @media screen and (max-width: $pad) {
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-bottom: solid 1px #333;
+    }
+    &+li {
+      margin-left: 10px;
+      @media screen and (max-width: $pad) {
+        margin-left: 0px;
+      }
+    }
+    a {
+      display: block;
+      text-decoration: none;
+      font-size: 14px;
+      color: #333;
+      @media screen and (max-width: $pad) {
+          padding: 20px 0px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: $pad) {
+  .active {
+    nav {
+      left: 0;
+    }
+    .mob_menu {
+      right: 20px;
+      &:before {
+        transform: translateY(4px) rotate(45deg);
+        background-color: #333;
+      }
+      &:after {
+        transform: translateY(-6px) rotate(-45deg);
+        background-color: #333;
+      }
+      span {
+        background-color: transparent;
+      }
+    }
+  }
+}
