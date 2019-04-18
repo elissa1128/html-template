@@ -1,15 +1,15 @@
-### Getting started
-Install dependencies:
+# Html template
+
+安裝相依套件
 ```
 npm install
 ```
 
-development:
+開發
 ```
 npm run dev
 ```
-
-deployment:
+部署
 ```
 npm run deploy
 ```

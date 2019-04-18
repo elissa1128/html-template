@@ -1,0 +1,12 @@
+$container: 960px;
+$pad: 980px;
+$mob: 720px;
+$smob: 374px;
+
+%clear {
+	&:after {
+		content: "";
+		display: block;
+		clear: both;
+	}
+}

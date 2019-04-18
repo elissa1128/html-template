@@ -9,7 +9,7 @@ function port(minNum, maxNum) {
 module.exports = {
   context: path.resolve(__dirname, 'src'),
   entry: {
-    index: 'index'
+    main: 'main'
   },
   output: {
     path: path.resolve(__dirname),
@@ -121,7 +121,7 @@ module.exports = {
       title: 'template',
       filename: 'index.html',
       template: 'html/index.html',
-      chunks: [ 'vendor', 'index' ],
+      chunks: [ 'vendor', 'main' ],
       hash: true
     }),
   ]
